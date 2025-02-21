@@ -1,6 +1,6 @@
-# Helm Charts for a list of sample apps
+# Helm Charts for a collection of sample applications
 
-A list of sample apps' helm charts modified with required istio and kyverno changes to be easily deployed in HPE PCAI environment:
+A collection of sample applications' Helm charts, updated with the necessary *Istio* and *Kyverno* modifications for seamless deployment in the *HPE Private Cloud AI* environment:
 
 * Open WebUI
 * PostgreSQL
