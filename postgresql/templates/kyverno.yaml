@@ -23,4 +23,5 @@ spec:
       patchStrategicMerge:
         metadata:
             labels:
-              hpe-ezua/type: vendor-service
+              "hpe-ezua/type": vendor-service
+              "hpe-ezua/app": {{ .Chart.Name }}
