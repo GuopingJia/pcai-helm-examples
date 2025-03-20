@@ -12,7 +12,7 @@ helm repo add weaviate https://weaviate.github.io/weaviate-helm
 helm install my-weaviate weaviate/weaviate
 ```
 
-# HPE notes
+# Notes
 
-Chart has been downloaded from [here](https://github.com/weaviate/weaviate-helm/releases/download/v17.4.2/weaviate.tgz) 
-and refers to v17.4.2 (Weaviate version 1.28.4).
+The original Weaviate helm chart has been downloaded from [here](https://github.com/weaviate/weaviate-helm/releases/download/v17.4.2/weaviate.tgz) 
+and refers to v17.4.2 (Weaviate version 1.28.4). We've modified the existing values.yaml and added additional manifest files required for HPE PCAI.
