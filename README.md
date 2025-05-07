@@ -4,3 +4,7 @@ A collection of sample applications' Helm charts, updated with the necessary *Is
 
 * Open WebUI
 * PostgreSQL
+* Weaviate
+* MinIO
+* MongoDB
+* LangFlow
