@@ -2668,5 +2668,5 @@ metrics:
 
 ezua:
   virtualService:
-    endpoint: "minio.${DOMAIN_NAME}"
+    endpoint: "mongodb.${DOMAIN_NAME}"
     istioGateway: "istio-system/ezaf-gateway"
