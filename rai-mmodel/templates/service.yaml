@@ -3,7 +3,8 @@ kind: Service
 metadata:
   name: {{ include "infosys.fullname" . }}
   labels:
-    {{- include "infosys.labels" . | nindent 4 }}
+    app: rai-mmodel
+    version: v1
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +13,5 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "infosys.selectorLabels" . | nindent 4 }}
+    app: rai-mmodel
+    version: v1

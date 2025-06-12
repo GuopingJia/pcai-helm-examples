@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ include "infosys.fullname" . }}
   labels:
-    app: responsible-ai-moderation-model
+    app: rai-mmodel
     version: v1
 spec:
   {{- if not .Values.autoscaling.enabled }}
@@ -11,12 +11,12 @@ spec:
   {{- end }}
   selector:
     matchLabels:
-      app: responsible-ai-moderation-model
+      app: rai-mmodel
       version: v1
   template:
     metadata:
       labels:
-        app: responsible-ai-moderation-model
+        app: rai-mmodel
         version: v1
     spec:
       {{- with .Values.imagePullSecrets }}
