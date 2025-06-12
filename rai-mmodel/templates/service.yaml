@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "infosys.fullname" . }}
+  labels:
+    {{- include "infosys.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.ports.infosys }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "infosys.selectorLabels" . | nindent 4 }}
