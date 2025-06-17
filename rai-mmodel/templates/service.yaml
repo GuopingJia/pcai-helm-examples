@@ -8,10 +8,10 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.ports.infosys }}
-      targetPort: http
+    - name: infosys
+      port: {{ .Values.service.ports.infosys }}
+      targetPort: infosys
       protocol: TCP
-      name: http
   selector:
     app: rai-mmodel
     version: v1

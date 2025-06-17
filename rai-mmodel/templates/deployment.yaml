@@ -30,7 +30,8 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: {{ .Values.containerPorts.infosys }}
+            - name: infosys
+              containerPort: {{ .Values.containerPorts.infosys }}
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           resources:
