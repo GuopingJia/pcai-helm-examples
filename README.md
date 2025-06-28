@@ -8,3 +8,10 @@ A collection of sample applications' Helm charts, updated with the necessary *Is
 * MinIO
 * MongoDB
 * LangFlow
+* Harbor 
+* ArgoCD
+* Grafana
+* RabbitMQ
+* RAI-MModel
+* Nginx-Chart
+* etc

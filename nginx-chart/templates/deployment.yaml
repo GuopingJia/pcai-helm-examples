@@ -14,6 +14,16 @@ spec:
       labels:
         {{- include "nginx-chart.selectorLabels" . | nindent 8 }}
     spec:
+      volumes:
+      - name: webdata
+        emptyDir: {}
+      initContainers:
+      - name: web-content
+        image: busybox
+        volumeMounts:
+        - name: webdata
+          mountPath: "/webdata"
+        command: ["/bin/sh", "-c", 'echo "<h1>This is <font color=blue>CFE Nginx app</font> deployed to HPE PCAI using the Nginx image from Harbor registry!</h1>" > /webdata/index.html']
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default "latest" }}"
@@ -22,6 +32,9 @@ spec:
             - name: nginx
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          volumeMounts:
+          - name: webdata
+            mountPath: "/usr/share/nginx/html"
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       imagePullSecrets:

@@ -15,8 +15,8 @@ imagePullSecrets:
 
 imageCredentials:
   registry: harbor.ingress.pcai0104.ld7.hpecolo.net
-  username: admin
-  password: Harbor12345
+  username: pcai-developer
+  password: PCAIDev12345
   email: glcs.cfe@hpe.com
   
 nameOverride: ""
