@@ -165,14 +165,14 @@ schedulerName: ""
 architecture: standalone
 ## @param useStatefulSet Set to true to use a StatefulSet instead of a Deployment (only when `architecture=standalone`)
 ##
-useStatefulSet: false
+useStatefulSet: true
 ## MongoDB(&reg;) Authentication parameters
 ##
 auth:
   ## @param auth.enabled Enable authentication
   ## ref: https://docs.mongodb.com/manual/tutorial/enable-authentication/
   ##
-  enabled: true
+  enabled: false
   ## @param auth.rootUser MongoDB(&reg;) root user
   ##
   rootUser: root
@@ -1334,7 +1334,7 @@ persistence:
     - ReadWriteOnce
   ## @param persistence.size PVC Storage Request for MongoDB(&reg;) data volume
   ##
-  size: 8Gi
+  size: 50Gi
   ## @param persistence.annotations PVC annotations
   ##
   annotations: {}
@@ -2365,7 +2365,7 @@ hidden:
       - ReadWriteOnce
     ## @param hidden.persistence.size PVC Storage Request for hidden node data volume
     ##
-    size: 8Gi
+    size: 50Gi
     ## @param hidden.persistence.annotations PVC annotations
     ##
     annotations: {}
