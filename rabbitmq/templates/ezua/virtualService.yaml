@@ -19,4 +19,4 @@ spec:
             host: {{ .Chart.Name }}.{{ .Release.Namespace }}.svc.cluster.local
             port:
               # Insert target service port number here
-              number: {{ .Values.service.ports.amqp }}
+              number: {{ .Values.service.ports.manager }}
