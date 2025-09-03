@@ -5,7 +5,7 @@
 replicaCount: 1
 
 image:
-  repository: harbor.ingress.pcai0104.ld7.hpecolo.net/demo/cfe-nginx
+  repository: harbor.ai-application.pcai0203.ld7.hpecolo.net/demo/cfe-nginx
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: "v0.1.0"
@@ -14,7 +14,7 @@ imagePullSecrets:
   - name: harbor
 
 imageCredentials:
-  registry: harbor.ingress.pcai0104.ld7.hpecolo.net
+  registry: harbor.ai-application.pcai0203.ld7.hpecolo.net
   username: pcai-developer
   password: PCAIDev12345
   email: glcs.cfe@hpe.com
