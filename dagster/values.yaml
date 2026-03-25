@@ -337,7 +337,8 @@ dagster-user-deployments:
     - name: "k8s-example-user-code-1"
       image:
         # When a tag is not supplied, it will default as the Helm chart version.
-        repository: "docker.io/pcaidemo/user-code-example"
+        # repository: "docker.io/pcaidemo/user-code-example"
+        repository: "harbor.ai-application.pcai0104.ld7.hpecolo.net/pcaidemo/user-code-example"
         tag: ~
 
         # Change with caution! If you're using a fixed tag for pipeline run images, changing the
@@ -1513,7 +1514,8 @@ pipelineRun:
   image:
     # When a tag is not supplied for a Dagster provided image,
     # it will default as the Helm chart version.
-    repository: "docker.io/pcaidemo/user-code-example"
+    # repository: "docker.io/pcaidemo/user-code-example"
+    repository: "harbor.ai-application.pcai0104.ld7.hpecolo.net/pcaidemo/user-code-example"
     tag: ~
     pullPolicy: Always
 
