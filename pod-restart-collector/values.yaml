@@ -1,0 +1,62 @@
+# Default values for k8s-pod-restart-info-collector.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+# K8s cluster name, e.g., ld7s203r10
+clusterName: "ChangeMe"
+
+# Slack app, webhook URL and channel
+# slack app, e.g., PCAI-Pod-monitoring
+slackUsername: "changeme"
+# slack webhook URL, e.g., https://hooks.slack.com/services/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
+slackWebhookUrl: "https://hooks.slack.com/services/ChangeMe"
+# slack channel, e.g., pcai-pod-monitoring
+slackChannel: "changeme"
+
+muteSeconds: 600
+ignoreRestartCount: 30
+
+# A set of namespaces to be ignored. This should be provided as a comma-separated list or a regular expression.
+ignoredNamespaces: ""
+# A set of pod name prefixes to be ignored. This should be provided as a comma-separated list or a regular expression.
+ignoredPodNamePrefixes: ""
+
+# A set of namespaces to be watched. This should be provided as a comma-separated list or a regular expression.
+watchedNamespaces: ""
+# A set of pod name prefixes to be watched. This should be provided as a comma-separated list or a regular expression.
+watchedPodNamePrefixes: ""
+
+# Whether restart events with an exit code of 0 should be ignored, true or false
+ignoreRestartsWithExitCodeZero: false
+
+image:
+  repository: devopsairwallex/k8s-pod-restart-info-collector
+  tag: "v1.4.0"
+
+resources: 
+  limits:
+    cpu: 50m
+    memory: 100Mi
+  requests:
+    cpu: 20m
+    memory: 50Mi
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+ezua:
+  #Use next options in order to configure the application endpoint.
+  virtualService:
+    endpoint: "pod-restart-collector.${DOMAIN_NAME}"
+    istioGateway: "istio-system/ezaf-gateway"
