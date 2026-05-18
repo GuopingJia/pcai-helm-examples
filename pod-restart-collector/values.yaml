@@ -8,7 +8,7 @@ clusterName: "ChangeMe"
 # Slack app, webhook URL and channel
 # slack app, e.g., PCAI-Pod-monitoring
 slackUsername: "changeme"
-# slack webhook URL, e.g., https://hooks.slack.com/services/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
+# slack webhook URL, e.g., https://hooks.slack.com/services/<number>/<number>/<number>
 slackWebhookUrl: "https://hooks.slack.com/services/ChangeMe"
 # slack channel, e.g., pcai-pod-monitoring
 slackChannel: "changeme"
